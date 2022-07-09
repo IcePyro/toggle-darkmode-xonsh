@@ -1,7 +1,5 @@
-darkmode_appendix = "-Nokto"
-
 def _toggle_darkmode():
-    new_theme = global_variables['current_system_theme'] if global_variables["is_system_darkmode"] else global_variables['current_system_theme'] + darkmode_appendix
+    new_theme = global_variables['current_system_theme'] if global_variables['is_system_darkmode'] else global_variables['current_system_theme_dark']
     
     # change gtk theme
     gsettings set org.gnome.desktop.interface gtk-theme @(new_theme) 
@@ -13,5 +11,5 @@ def _toggle_darkmode():
 
     
     # toggle global switch
-    global_variables["is_system_darkmode"] = not global_variables["is_system_darkmode"]
+    global_variables['is_system_darkmode'] = not global_variables['is_system_darkmode']
     
